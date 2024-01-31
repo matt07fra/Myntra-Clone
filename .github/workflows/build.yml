@@ -42,4 +42,14 @@ jobs:
           docker scout quickview mathewf/myntra:latest
           docker scout cves mathewf/myntra:latest
 
+  deploy:
+    needs: build-analyze-scan   
+    runs-on: [self-hosted]
+    steps:
+      - name: docker pull image
+        run: docker pull mathewf/myntra:latest
+  
+      - name: Deploy to container
+        run: docker run -d --name game -p 3000:3000 mathewf/myntra:latest
+
       
