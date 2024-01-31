@@ -27,8 +27,8 @@ jobs:
 
       - name: Docker Scout Scan
         run: |
-          docker-scout quickview fs://.
-          docker-scout cves fs://.
+          docker scout quickview fs://.
+          docker scout cves fs://.
 
       - name: Docker build and push
         run: |
@@ -42,7 +42,7 @@ jobs:
 
       - name: Docker Scout Image Scan
         run: |
-          docker-scout quickview mathewf/myntra:latest
-          docker-scout cves mathewf/myntra:latest
+          docker scout quickview mathewf/myntra:latest
+          docker scout cves mathewf/myntra:latest
 
       
